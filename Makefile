@@ -13,6 +13,11 @@ build.js:
 
 build: build.js build.css
 
+collect_static:
+	mkdir collected_static
+	$(ENV)/python manage.py collectstatic
+
+
 watch.css: 
 	nodemon -I -w less/ --ext less --exec 'make build.css' &
 
