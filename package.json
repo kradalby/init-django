@@ -1,0 +1,37 @@
+{
+  "name": "fap.no",
+  "version": "0.0.0",
+  "description": "fap.no",
+  "main": ".",
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.3",
+    "jshint": "^2.7.0",
+    "jshint-stylish": "^2.0.0",
+    "less": "^2.5.1",
+    "nodemon": "^1.3.7",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.2.1",
+    "webworkify": "^1.0.2"
+  },
+  "scripts": {
+    "test": "."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kradalby/init-django.git"
+  },
+  "author": "Kristoffer Dalby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kradalby/init-django/issues"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "uglifyify"
+    ]
+  },
+  "homepage": "https://github.com/kradalby/init-django"
+}
