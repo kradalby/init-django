@@ -3,7 +3,7 @@ from init_django.settings.base import *
 ALLOWED_HOSTS = []
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h$jvh@)3c(!xrj7w=y_+v%@(ak)hmom%=f=^de3u^my(+pzvx9'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
