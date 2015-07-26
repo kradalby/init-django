@@ -42,8 +42,8 @@ clean:
 test:
 	$(ENV)/python setup.py test
 
-#run:
-#	$(ENV)/python gso.py
+run:
+	$(ENV)/python manage.py runserver 0.0.0.0:8000
 
 freeze:
 	mkdir -p requirements
