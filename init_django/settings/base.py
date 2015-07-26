@@ -37,7 +37,6 @@ PREREQ_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangosaml2',
 ]
 
 PROJECT_APPS = [
