@@ -3,10 +3,12 @@ PATH  := node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
 build.css: 
+	mkdir -p static/css
 	lessc less/style.less static/css/bundle.css
 	autoprefixer static/css/bundle.css
 
 build.js:
+	mkdir -p static/js
 	browserify js/app.js -o static/js/bundle.js
 
 build: build.js build.css
