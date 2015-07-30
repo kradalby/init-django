@@ -1,6 +1,9 @@
 ENV=./env/bin
 PATH  := node_modules/.bin:$(PATH)
 SHELL := /bin/bash
+PYTHON=$(ENV)/python
+PIP=$(ENV)/pip
+MANAGE=$(PYTHON) manage.py
 
 build.css: 
 	mkdir -p static/css
@@ -11,12 +14,12 @@ build.js:
 	mkdir -p static/js
 	browserify js/app.js -o static/js/bundle.js
 
-build: build.js build.css
-
 collect_static:
 	mkdir collected_static
-	$(ENV)/python manage.py collectstatic
+	$(MANAGE) collectstatic
 
+
+build: build.js build.css
 
 watch.css: 
 	nodemon -I -w less/ --ext less --exec 'make build.css' &
@@ -31,10 +34,10 @@ jshint:
 
 dev: 
 	npm install
-	$(ENV)/pip install -r requirements/development.txt --upgrade
+	$(PIP) install -r requirements/development.txt --upgrade
 
 prod:
-	$(ENV)/pip install -r requirements/production.txt --upgrade
+	$(PIP) install -r requirements/production.txt --upgrade
 
 env:
 	virtualenv -p `which python3` env
@@ -45,11 +48,11 @@ clean:
 	rm -rf *.egg-info
 
 test:
-	$(ENV)/python setup.py test
+	$(MANAGE) test
 
 run:
-	$(ENV)/python manage.py runserver 0.0.0.0:8000
+	$(MANAGE) runserver 0.0.0.0:8000
 
 freeze:
 	mkdir -p requirements
-	$(ENV)/pip freeze > requirements/base.txt
+	$(PIP) freeze > requirements/base.txt
