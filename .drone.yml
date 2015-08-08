@@ -1,0 +1,16 @@
+# image: kradalby/python
+image: evonove/ci
+git:
+  path: github.com/kradalby/init_django
+
+env:
+    - DJANGO_SETTINGS_MODULE=init_django.settings.dev
+
+script:
+    - pip install tox
+    - tox
+
+notify:
+  email:
+    recipients:
+      - kradalby@kradalby.no
