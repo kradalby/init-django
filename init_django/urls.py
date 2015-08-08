@@ -19,7 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'apps.terminal.views.index'),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^appname/', include('apps.appname.urls')),
+    # url(r'^appname/', include('apps.appname.urls')),
 
-    url(r'^terminal/', include('apps.terminal.urls')),
 ]
