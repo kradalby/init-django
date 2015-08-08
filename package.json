@@ -1,37 +1,21 @@
 {
-  "name": "fap.no",
-  "version": "0.0.0",
-  "description": "fap.no",
-  "main": ".",
-  "devDependencies": {
-    "autoprefixer": "^5.2.0",
-    "babelify": "^6.1.2",
-    "browserify": "^10.2.3",
-    "jshint": "^2.7.0",
-    "jshint-stylish": "^2.0.0",
-    "less": "^2.5.1",
-    "nodemon": "^1.3.7",
-    "uglifyify": "^3.0.1",
-    "watchify": "^3.2.1",
-    "webworkify": "^1.0.2"
-  },
-  "scripts": {
-    "test": "."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kradalby/init-django.git"
-  },
-  "author": "Kristoffer Dalby",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kradalby/init-django/issues"
-  },
   "browserify": {
     "transform": [
-      "babelify",
-      "uglifyify"
+      "babelify"
     ]
   },
-  "homepage": "https://github.com/kradalby/init-django"
+  "dependencies": {
+    "autoprefixer": "^5.2.0",
+    "babel": "^5.8.20",
+    "babelify": "^6.1.3",
+    "browser-request": "^0.3.3",
+    "browserify": "^10.2.3",
+    "eslint": "^1.0.0",
+    "less": "^2.5.1",
+    "nodemon": "^1.3.7",
+    "uglify-js": "^2.4.24",
+    "uglifyify": "^3.0.1",
+    "util": "^0.10.3",
+    "watchify": "^3.2.1"
+  }
 }

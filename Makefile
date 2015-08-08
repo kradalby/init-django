@@ -12,12 +12,14 @@ build.css:
 
 build.js:
 	mkdir -p static/js
-	browserify frontend/js/app.js -o static/js/bundle.js
+	browserify frontend/js/app.js | uglifyjs -c > static/js/bundle.js
+
+build.js.debug:
+	browserify frontend/js/app.js > static/js/bundle.js
 
 collect_static:
 	mkdir collected_static
 	$(MANAGE) collectstatic
-
 
 build: build.js build.css
 
@@ -29,8 +31,13 @@ watch.js:
 
 watch: watch.css watch.js
 
-jshint:
-	jshint --reporter node_modules/jshint-stylish/stylish.js frontend/js/; true
+eslint:
+	eslint frontend/js
+
+flake8:
+	flake8
+
+lint: eslint flake8
 
 dev: 
 	npm install
