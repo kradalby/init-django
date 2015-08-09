@@ -49,6 +49,9 @@ prod:
 env:
 	virtualenv -p `which python3` env
 
+migrate:
+	$(MANAGE) migrate
+
 clean:
 	pyclean .
 	find . -name "*.pyc" -exec rm -rf {} \;
